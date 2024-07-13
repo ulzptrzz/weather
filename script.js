@@ -40,7 +40,7 @@ function updateWeatherUI(json, city) {
             image.src = 'images/sun.png';
             break;
         case 'Rain':
-            image.src = 'images/rains.png';
+            image.src = 'images/hujan.png';
             break;
         case 'Snow':
             image.src = 'images/snow.png';
@@ -170,7 +170,7 @@ search.addEventListener('click', () => {
                 cityHide.textContent = city;
                 container.style.height = '400px';
                 container.style.width = '400px';
-                searchInput.style.width = '800%';
+                searchInput.style.width = '800cm';
                 weatherBox.classList.remove('active');
                 weatherDetails.classList.remove('active');
                 card.classList.remove('active');
