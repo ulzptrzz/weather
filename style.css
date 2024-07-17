@@ -575,6 +575,10 @@ body {
 }
 
 @media only screen and (max-width: 520px) {
+    .weather-details {
+        padding: 0 210px 0 0;
+    }
+    
     .hourly-forecast {
         width: 84vh;
         height: 128px;
@@ -775,6 +779,7 @@ body {
     .card {
         width: 345px;
     }
+    
 
     .hourly-forecast {
         width: 61vh;
@@ -790,6 +795,10 @@ body {
 
     .weather-box {
         margin-left: 45px;
+    }
+
+    .weather-details {
+        margin-top: 42vh;
     }
 
     .weather-details {
@@ -841,6 +850,14 @@ body {
     .card {
         margin: 85vh 0 0 -3px;
         height: 220px;
+    }
+
+    .hourly {
+        margin-top: -20px;
+    }
+
+    .weather-details {
+        margin-top: 45vh;
     }
 
     .hourly-forecast {
