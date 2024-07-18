@@ -414,18 +414,22 @@ body {
 }
 
 @media only screen and (max-width: 660px) {
+    .hourly{
+        position: absolute;
+    }
+
     .hourly-forecast {
         width: 110vh;
     }
     
     .hourly-items {
-        margin-left: 8px;
+        margin-left: 5px;
     }
 }
 
 @media only screen and (max-width: 650px) {
     .weather-details i {
-        font-size: 48px;
+        font-size: 47px;
         margin-right: 5px;
     }
 
@@ -440,13 +444,13 @@ body {
 }
 
 @media only screen and (max-width: 640px) {
-    .weather-details i {
-        font-size: 40px;
-    }
-
     .weather-box {
         margin-top: 60px;
         margin-left: 50px;
+    }
+
+    .weather-details p {
+        font-size: 11px;
     }
 
     .weather-box img {
@@ -458,11 +462,6 @@ body {
     .weather-box {
         margin-top: 65px;
         margin-left: 30px;
-    }
-    
-    .weather-details p {
-        font-size: 12px;
-        font-weight: 350;
     }
     
     .weather-details i {
@@ -524,6 +523,10 @@ body {
 }
 
 @media only screen and (max-width: 560px) {
+    .weather-box {
+        margin-left: -5px;
+    }
+    
     .hourly-forecast {
         width: 90vh;
     }
@@ -536,6 +539,22 @@ body {
 }
 
 @media only screen and (max-width: 540px) {
+    .weather-box img {
+        width: 80%;
+    }
+
+    .weather-details i {
+        font-size: 30px;
+    }
+    
+    .weather-details span {
+        font-size: 18px;
+    }
+
+    .weather-details p {
+        font-size: 9px;
+    }
+    
     .hourly-forecast {
         width: 88vh;
     }
@@ -543,13 +562,7 @@ body {
     .hourly-items {
         margin-left: 0px;
     }
-    .weather-box img {
-        width: 82%;
-    }
 
-    .weather-box {
-        margin-left: -5px;
-    }
     .hourly {
         margin-top: 10px;
     }
@@ -590,36 +603,19 @@ body {
     }
 
     .hourly{
-        position: absolute;
         margin-right: 30px;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    .weather-box img {
-        width: 80%;
-    }
-
     .weather-box {
         margin-left: -20px;
     }
 
     .weather-details {
-        padding: 0 210px 0 0;
+        padding: 0 200px 0 0px;
     }
 
-    .weather-details i {
-        font-size: 30px;
-    }
-    
-    .weather-details span {
-        font-size: 18px;
-    }
-
-    .weather-details p {
-        font-size: 10px;
-    }
-    
     .hourly-forecast {
         width: 79vh;
     }
@@ -675,7 +671,7 @@ body {
     
     .weather-details {
         margin-top: 45vh;
-        padding: 0 10px 0 40px;
+        padding: 0 10px 0 35px;
     }
 
     .weather-details i {
@@ -688,7 +684,7 @@ body {
     
     .card {
         position: absolute;
-        margin: 89vh 0 0 -5px;
+        margin: 90vh 0 0 0px;
         width: 390px;
         height: 190px;
     }
@@ -717,7 +713,7 @@ body {
     }
 
     .hourly {
-        margin-top: 0px;
+        margin-top: 4px;
     }
 
     .hourly h2 {
@@ -730,7 +726,7 @@ body {
     }
 
     .forecast {
-        margin-top: -8px;
+        margin-top: -6px;
     }
 
     .hourly-items {
@@ -750,13 +746,13 @@ body {
 
 @media only screen and (max-width: 430px) {
     .card {
-        margin: 87vh 0 0 -3px;
+        margin: 88vh 0 0 0px;
         width: 360px;
         height: 196px;
     }
 
     .hourly-forecast {
-        width: 66vh;
+        width: 64vh;
         height: 105px;
     }
 
@@ -765,40 +761,13 @@ body {
     }
 
     .hourly-items img {
-        width: 40px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .hourly-forecast {
-        width: 64vh;
+        width: 38px;
     }
 }
 
 @media only screen and (max-width: 390px) {
-    .card {
-        width: 345px;
-    }
-    
-
-    .hourly-forecast {
-        width: 61vh;
-    }
-    
-    .hourly-items {
-        font-size: 10px;
-    }
-
-    .hourly-items img {
-        width: 38px;
-    }
-
     .weather-box {
         margin-left: 45px;
-    }
-
-    .weather-details {
-        margin-top: 42vh;
     }
 
     .weather-details {
@@ -810,13 +779,25 @@ body {
     }
     
     .weather-details p {
+        font-size: 9px;
+    }
+
+    .card {
+        width: 345px;
+    }
+
+    .hourly-forecast {
+        width: 61vh;
+    }
+    
+    .hourly-items {
         font-size: 10px;
     }
 }
 
 @media only screen and (max-width: 370px) {
     .card {
-        margin: 85vh 0 0 -3px;
+        margin: 90vh 0 0 -3px;
         width: 325px;
         height: 220px;
     }
@@ -848,33 +829,43 @@ body {
 
 @media only screen and (max-width: 359px) {  
     .card {
-        margin: 85vh 0 0 -3px;
+        margin: 87vh 0 0 -3px;
         height: 220px;
     }
 
     .hourly {
-        margin-top: -20px;
+        margin-top: 5px;
     }
 
     .weather-details {
-        margin-top: 45vh;
+        margin-top: 44vh;
     }
 
     .hourly-forecast {
         width: 58vh;
         height: 98px;
     }
-    
-    .hourly-items {
-        margin-left: 1px;
-    }
 }
 
 @media only screen and (max-width: 350px) {
+    .weather-box {
+        margin-left: 25px;
+    }
+    
+    .weather-details {
+        padding: 0 10px 0 20px;
+    }
+    
+    .weather-details i {
+        font-size: 35px;
+    }
+    
+    .weather-details p {
+        font-size: 10px;
+    }
+
     .card {
-        margin: 83vh 0 0 -3px;
         width: 310px;
-        height: 220px;
     }
 
     .hourly-forecast {
@@ -888,23 +879,7 @@ body {
     }
 
     .hourly-items img {
-        width: 33px;
-    }
-
-    .weather-box {
-        margin-left: 25px;
-    }
-
-    .weather-details {
-        padding: 0 10px 0 20px;
-    }
-
-    .weather-details i {
-        font-size: 35px;
-    }
-    
-    .weather-details p {
-        font-size: 10px;
+        width: 25px;
     }
 }
 
@@ -921,15 +896,15 @@ body {
         font-size: 8px;
         padding: 9px 0px 0 3px;
     }
-
-    .hourly-items img {
-        width: 30px;
-    }
 }
 
 @media only screen and (max-width: 300px) {
+    .weather-details {
+        padding: 0 0px 0 0px;
+    }
+
     .card {
-        margin: 80vh 0 0 -3px;
+        margin: 85vh 0 0 -3px;
         width: 263px;
     }
 
@@ -940,9 +915,5 @@ body {
 
     .hourly-items {
         padding: 9px 0px 0 1px;
-    }
-
-    .hourly-items img {
-        width: 25px;
     }
 }
