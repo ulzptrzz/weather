@@ -6,13 +6,13 @@ const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 const card = document.querySelector('.card');
 const hourly = document.querySelector('.hourly');
-const currentWeatherCard = document.querySelectorAll('.weather-left .card')[0];
 const fiveDaysForecastCard = document.querySelector('.day-forecast');
 const hourlyForecastCard = document.querySelector('.hourly-forecast');
 const cityHide = document.querySelector('.city-hide');
 
 const APIKey = '64833336264ff473245536706fd4efbd';
 
+// Fungsi untuk memperbarui UI dengan data cuaca
 function updateWeatherUI(json, city) {
     const image = document.querySelector('.weather-box img');
     const temperature = document.querySelector('.weather-box .temperature');
@@ -20,6 +20,7 @@ function updateWeatherUI(json, city) {
     const humidity = document.querySelector('.weather-details .humidity span');
     const wind = document.querySelector('.weather-details .wind span');
 
+    // Memperbarui nama kota dan tampilan container
     cityHide.textContent = city;
     container.style.height = '730px';
     container.style.width = '800px';
@@ -31,10 +32,12 @@ function updateWeatherUI(json, city) {
     hourly.classList.add('active');
     error404.classList.remove('active');
 
+    // Menghapus kelas 'active' setelah 2,5 detik
     setTimeout(() => {
         container.classList.remove('active');
     }, 2500);
 
+    // Menyesuaikan gambar berdasarkan kondisi cuaca
     switch (json.weather[0].main) {
         case 'Clear':
             image.src = 'images/sun.png';
@@ -56,16 +59,19 @@ function updateWeatherUI(json, city) {
             image.src = 'images/cloudsun.png';
     }
 
+    // Memperbarui elemen UI dengan data cuaca
     temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
     description.innerHTML = `${json.weather[0].description}`;
     humidity.innerHTML = `${json.main.humidity}%`;
     wind.innerHTML = `${parseInt(json.wind.speed)}km/h`;
 
+    // Mengkloning dan menghapus elemen info cuaca
     cloneAndRemoveInfo('.info-weather', 'clone-info-weather');
     cloneAndRemoveInfo('.info-humidity', 'clone-info-humidity');
     cloneAndRemoveInfo('.info-wind', 'clone-info-wind');
 }
 
+// Fungsi untuk mengkloning dan menghapus elemen info
 function cloneAndRemoveInfo(selector, cloneId) {
     const infoElement = document.querySelector(selector);
     const clonedElement = infoElement.cloneNode(true);
@@ -86,6 +92,7 @@ function cloneAndRemoveInfo(selector, cloneId) {
     }
 }
 
+// Fungsi untuk memperbarui prakiraan cuaca per jam
 function updateHourlyForecast(data) {
     if (!data || !data.list || data.list.length === 0) {
         console.error("Invalid data for hourly forecast");
@@ -105,8 +112,6 @@ function updateHourlyForecast(data) {
             hour -= 12;
         }
 
-        const temperature = Math.round(forecast.main.temp); 
-
         hourlyForecastCard.innerHTML += `
             <div class="hourly-items">
                 <p>${hour} ${period}</p>
@@ -116,6 +121,7 @@ function updateHourlyForecast(data) {
         `;
     });
 
+    // Menambah elemen kosong jika kurang dari 8 elemen
     const currentCards = hourlyForecastCard.querySelectorAll('.hourly-items').length;
     if (currentCards < 8) {
         for (let i = currentCards; i < 8; i++) {
@@ -130,7 +136,7 @@ function updateHourlyForecast(data) {
     }
 }
 
-
+// Fungsi untuk memperbarui prakiraan cuaca lima hari ke depan
 function updateFiveDaysForecast(data) {
     let uniqueForecastDays = [];
     let fiveDaysForecast = data.list.filter(forecast => {
@@ -158,42 +164,55 @@ function updateFiveDaysForecast(data) {
     });
 }
 
+// Event listener untuk tombol pencarian
 search.addEventListener('click', () => {
-    const city = document.querySelector('.search-box input').value;
+    const city = document.querySelector('.search-box input').value.trim();
 
-    if (city === '') return;
+    // Cek apakah input valid
+    if (city.length < 3) {
+        showError(city); // Tampilkan pesan error jika input tidak valid
+        return;
+    }
 
+    // Fetch data cuaca saat ini
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
+            console.log(json); // Menambahkan logging untuk melihat respons dari API
             if (json.cod === '404') {
-                cityHide.textContent = city;
-                container.style.height = '400px';
-                container.style.width = '400px';
-                searchInput.style.width = '800cm';
-                weatherBox.classList.remove('active');
-                weatherDetails.classList.remove('active');
-                card.classList.remove('active');
-                hourly.classList.remove('active');
-                error404.classList.add('active');
+                showError(city); // Tampilkan pesan error jika kota tidak ditemukan
                 return;
             }
-
             if (cityHide.textContent === city) return;
 
             updateWeatherUI(json, city);
 
+            // Fetch data prakiraan cuaca
             fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${APIKey}`)
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data); // Menambahkan logging untuk melihat respons dari API
                     updateHourlyForecast(data);
                     updateFiveDaysForecast(data);
                 })
                 .catch(() => {
-                    alert('Failed to fetch weather forecast');
+                    alert('Gagal mengambil data prakiraan cuaca');
                 });
         })
         .catch(() => {
-            alert('Failed to fetch current weather');
+            alert('Gagal mengambil data cuaca saat ini');
         });
 });
+
+// Fungsi untuk menampilkan pesan error jika kota tidak ditemukan
+function showError(city) {
+    cityHide.textContent = city;
+    container.style.height = '400px';
+    container.style.width = '400px';
+    searchInput.style.width = '800%'; // Memperbaiki lebar input menjadi '800%'
+    weatherBox.classList.remove('active');
+    weatherDetails.classList.remove('active');
+    card.classList.remove('active');
+    hourly.classList.remove('active');
+    error404.classList.add('active');
+}

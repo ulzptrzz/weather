@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,120 +8,123 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
-
     <body>
-       
-        <div class="container">
-            <div class="content">
-                <div class="search-box">
-                    <i class='bx bxs-map'></i>
-                    <input type="text" placeholder=" your location">
-                    <button class="bx bx-search"></button>
-                </div>
-
-                <p class="city-hide">city hide</p>
-                
-                <div class="weather-box">
-                    <div class="box">
-                        <div class="info-weather">
-                            <div class="weather">
-                            <img src="images/cloudsun.png">
-                            <p class="temperature">0<span>°C</span></p>
-                                <div class="des">
-                                    <p class="description">Broken Clouds</p>
+        <main>
+        <!--Membuat Aplikasi Cuaca-->
+            <section class="container">
+                <div class="content">
+                    <!--Kotak Pencarian-->
+                    <div class="search-box">
+                        <i class='bx bxs-map'></i>
+                        <input type="text" placeholder=" your location">
+                        <button class="bx bx-search"></button>
+                    </div>
+                    <p class="city-hide">city hide</p>
+                    <!--Box Cuaca-->
+                    <div class="weather-box">
+                        <div class="box">
+                            <div class="info-weather">
+                                <div class="weather">
+                                <img src="images/cloudsun.png">
+                                <p class="temperature">0<span>°C</span></p>
+                                    <div class="des">
+                                        <p class="description">Broken Clouds</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="not-found">
-                    <div class="box">
-                        <img src="images/error.png">
-                        <p>Oops! Location not found!</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <h2>5 Days Forecast</h2>
-                    <div class="day-forecast">
-                        <div class="forecast-item">
-                            <div class="icon-wrapper">
-                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                                <span>___&deg;C</span>
-                            </div>
-                            <p>___</p>
-                            <p>___</p>
-                        </div>
-                        <div class="forecast-item">
-                            <div class="icon-wrapper">
-                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                                <span>___&deg;C</span>
-                            </div>
-                            <p>___</p>
-                            <p>___</p>
-                        </div>
-                        <div class="forecast-item">
-                            <div class="icon-wrapper">
-                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                                <span>___&deg;C</span>
-                            </div>
-                            <p>___</p>
-                            <p>___</p>
-                        </div>
-                        <div class="forecast-item">
-                            <div class="icon-wrapper">
-                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                                <span>___&deg;C</span>
-                            </div>
-                            <p>___</p>
-                            <p>___</p>
-                        </div>
-                        <div class="forecast-item">
-                            <div class="icon-wrapper">
-                                <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                                <span>___&deg;C</span>
-                            </div>
-                            <p>___</p>
-                            <p>___</p>
+                    <!--Box tidak ada lokasi-->
+                    <div class="not-found">
+                        <div class="box">
+                            <img src="images/error.png">
+                            <p>Oops! Location not found!</p>
                         </div>
                     </div>
+                    <!--Perkiraan Cuaca 5 Hari-->
+                    <div class="card">
+                        <h2>5 Days Forecast</h2>
+                        <div class="day-forecast">
+                            <div class="forecast-item">
+                                <div class="icon-wrapper">
+                                    <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                    <span>___&deg;C</span>
+                                </div>
+                                <p>___</p>
+                                <p>___</p>
+                            </div>
+                            <div class="forecast-item">
+                                <div class="icon-wrapper">
+                                    <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                    <span>___&deg;C</span>
+                                </div>
+                                <p>___</p>
+                                <p>___</p>
+                            </div>
+                            <div class="forecast-item">
+                                <div class="icon-wrapper">
+                                    <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                    <span>___&deg;C</span>
+                                </div>
+                                <p>___</p>
+                                <p>___</p>
+                            </div>
+                            <div class="forecast-item">
+                                <div class="icon-wrapper">
+                                    <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                    <span>___&deg;C</span>
+                                </div>
+                                <p>___</p>
+                                <p>___</p>
+                            </div>
+                            <div class="forecast-item">
+                                <div class="icon-wrapper">
+                                    <img src="https://openweathermap.org/img/wn/02d.png" alt="">
+                                    <span>___&deg;C</span>
+                                </div>
+                                <p>___</p>
+                                <p>___</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!--Kelembapan dan Kecepatan angin--->
+                <div class="weather-details">
+                    <div class="humidity">
+                        <i class='bx bx-water' ></i>
+                        <div class="text">
+                            <div class="info-humidity">
+                                <span>0%</span>
+                            </div>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="wind">
+                        <i class='bx bx-wind' ></i>
+                        <div class="text">
+                            <div class="info-wind">
+                                <span>0Km/h</span>
+                            </div>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Perkiraan Cuaca Perhari-->
+                <div class="hourly">
+                    <h2>Today at</h2>
+                    <div class="forecast">
+                        <div class="hourly-forecast">
+                            <div class="hourly-items">
+                                <p> _ AM</p>
+                                <img src="https://openweathermap.org/img/wn/04d.png" alt="">
+                                <span>__&deg;C</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="weather-details">
-                <div class="humidity">
-                    <i class='bx bx-water' ></i>
-                    <div class="text">
-                        <div class="info-humidity">
-                            <span>0%</span>
-                        </div>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-        
-                <div class="wind">
-                    <i class='bx bx-wind' ></i>
-                    <div class="text">
-                        <div class="info-wind">
-                            <span>0Km/h</span>
-                        </div>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="hourly">
-                <h2>Today at</h2>
-                <div class="forecast">
-                    <div class="hourly-forecast">
-                        <div class="hourly-items">
-                            <p> _ AM</p>
-                            <img src="https://openweathermap.org/img/wn/04d.png" alt="">
-                            <span>__&deg;C</span>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </main>
         <script src="script.js"></script>
     </body>
 </html>
