@@ -9,6 +9,7 @@ const hourly = document.querySelector('.hourly');
 const fiveDaysForecastCard = document.querySelector('.day-forecast');
 const hourlyForecastCard = document.querySelector('.hourly-forecast');
 const cityHide = document.querySelector('.city-hide');
+const content = document.querySelector('.content');
 
 const APIKey = '64833336264ff473245536706fd4efbd';
 
@@ -25,6 +26,7 @@ function updateWeatherUI(json, city) {
     container.style.height = '730px';
     container.style.width = '800px';
     searchInput.style.width = '100%';
+    content.style.display = 'flex';
     container.classList.add('active');
     weatherBox.classList.add('active');
     weatherDetails.classList.add('active');
@@ -209,8 +211,8 @@ function showError(city) {
     cityHide.textContent = city;
     container.style.height = '400px';
     container.style.width = '400px';
-    searchInput.style.width = '800%'; // Memperbaiki lebar input menjadi '800%'
     weatherBox.classList.remove('active');
+    content.style.display = 'block';
     weatherDetails.classList.remove('active');
     card.classList.remove('active');
     hourly.classList.remove('active');
