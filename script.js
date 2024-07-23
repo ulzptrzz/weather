@@ -11,6 +11,7 @@ const hourlyForecastCard = document.querySelector('.hourly-forecast');
 const cityHide = document.querySelector('.city-hide');
 const content = document.querySelector('.content');
 
+//Code APIKey
 const APIKey = '64833336264ff473245536706fd4efbd';
 
 // Fungsi untuk memperbarui UI dengan data cuaca
